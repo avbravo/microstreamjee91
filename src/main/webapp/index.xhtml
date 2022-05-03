@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>jmoordbgenesis</title>
+        <style type="text/css">
+            p {
+                line-height: 1.5;
+                margin: 0;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <f:view contentType="text/html"> 
+            <h:form id="form" prependId="false">
+                <p:growl id="growl"/>
+                <p:card style="width: 25rem; margin-bottom: 2em">
+                    <f:facet name="title">
+                        Jmoordbgenesis
+                    </f:facet>
+
+                    <p>Ingrese mensaje
+                        <p:inputText value="#{indexController.mensaje}"/>
+                    </p>
+                    <f:facet name="footer">
+                        <p:panelGrid columns="3">
+                              <p:commandButton value="Saludar" 
+                                         action="#{indexController.saludar()}"
+                                         styleClass="ui-button-secondary" style="margin-left: .5em"
+                                         update=":form:growl"/>
+                              
+                              
+                        <p:commandButton value="JavaDriver(Country)" 
+                                         action="javadriver"
+                                         styleClass="ui-button-primary" style="margin-left: .5em"
+                                         update=":form:growl"/>
+                        <p:commandButton value="InterfaceRepository(Country)" 
+                                         action="interfacerepository"
+                                         styleClass="ui-button-primary" style="margin-left: .5em"
+                                         update=":form:growl"/>
+                        <p:commandButton value="Legacy Repository(Person)" 
+                                         action="legacy"
+                                         styleClass="ui-button-danger" style="margin-left: .5em"
+                                         update=":form:growl"/>
+                        </p:panelGrid>
+                      
+                    </f:facet>
+
+                </p:card>
+
+   
+
+
+
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
+
